@@ -1,0 +1,36 @@
+﻿<Window x:Class="Battleships.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Battleships"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" Background="Black">
+    <Window.Icon>
+        <BitmapImage UriSource="Images/BattleshipIcon.png"/>
+    </Window.Icon>
+    <Border CornerRadius="5" Background="Aqua" Margin="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="GameResetButton" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Reset" Width="40" Height="20" Click="GameResetButton_Click"/>
+            <StackPanel Grid.Column="0" Margin="0,20">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="Your Board" FontSize="20" FontStyle="Italic" FontWeight="Bold"/>
+                <WrapPanel Name="PlayerBoard"/>
+            </StackPanel>
+            <StackPanel Name="Informations" Grid.Column="1" Margin="0,20" >
+                <TextBlock Text="Wind Info:" FontSize="20" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Image Name="WindDirArrowImg" Height="45" Width="90" Source="Images/WindDirArrow.png" Margin="0,75,0,0"/>
+                <TextBlock Name="WindSpeedLbl" FontSize="16" Margin="0,25,0,0"/>
+                <TextBlock Name="WindDirectionLbl" FontSize="16" Margin="0,25,0,0" TextWrapping="Wrap"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Margin="0,20">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="AI Board" FontSize="20" FontStyle="Italic" FontWeight="Bold"/>
+                <WrapPanel Name="AIBoard"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
